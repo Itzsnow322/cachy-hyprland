@@ -1,0 +1,166 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+
+    font: "JetBrainsMono Nerd Font 13";
+
+    icon-theme: "Papirus";
+
+    terminal: "kitty";
+
+    drun-display-format: "{icon}  {name}";
+
+    location: 0;
+
+    disable-history: false;
+
+    hide-scrollbar: true;
+
+    display-drun: " Cachy ";
+}
+
+* {
+    bg-col: #11111bee;
+    bg-col-light: #1a1b26ee;
+
+    border-col: #ffffff;
+
+    selected-col: #2a2b3cee;
+
+    fg-col: #ffffff;
+
+    fg-col2: #d9d9d9;
+
+    width: 600;
+
+    font: "JetBrainsMono Nerd Font 13";
+}
+
+window {
+    transparency: "real";
+
+    location: center;
+    anchor: center;
+
+    fullscreen: false;
+
+    width: 32%;
+    height: 48%;
+
+    border-radius: 20px;
+
+    border: 2px;
+    border-color: @border-col;
+
+    background-color: @bg-col;
+}
+
+mainbox {
+    enabled: true;
+
+    spacing: 14px;
+
+    background-color: transparent;
+
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled: true;
+
+    spacing: 10px;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    background-color: @bg-col-light;
+
+    text-color: @fg-col;
+
+    children: [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled: true;
+
+    expand: false;
+
+    str: "";
+
+    text-color: @fg-col2;
+}
+
+entry {
+    enabled: true;
+
+    background-color: transparent;
+
+    text-color: inherit;
+
+    cursor: text;
+
+    placeholder: "Launch something...";
+    placeholder-color: #aaaaaa;
+}
+
+listview {
+    enabled: true;
+
+    columns: 1;
+    lines: 8;
+
+    cycle: true;
+
+    dynamic: true;
+
+    layout: vertical;
+
+    spacing: 8px;
+
+    scrollbar: false;
+
+    background-color: transparent;
+}
+
+element {
+    enabled: true;
+
+    spacing: 12px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background-color: transparent;
+
+    text-color: @fg-col;
+
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: transparent;
+
+    text-color: @fg-col;
+}
+
+element selected.normal {
+    background-color: @selected-col;
+
+    text-color: #ffffff;
+}
+
+element-icon {
+    size: 28px;
+
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+
+    text-color: inherit;
+
+    vertical-align: 0.5;
+}
