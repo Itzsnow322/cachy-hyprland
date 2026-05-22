@@ -1,0 +1,170 @@
+# ==================================================
+# HYPRLAND - CLEAN CACHYOS CONFIG
+# ==================================================
+
+monitor=,preferred,auto,1
+
+# ==================================================
+# VARIABLES
+# ==================================================
+
+$terminal = kitty
+$fileManager = thunar
+$menu = rofi -show drun
+
+# ==================================================
+# AUTOSTART
+# ==================================================
+
+exec-once = waybar
+exec-once = swaync
+exec-once = nm-applet --indicator
+exec-once = hyprpaper
+
+# ==================================================
+# ENV
+# ==================================================
+
+env = XCURSOR_SIZE,24
+env = QT_QPA_PLATFORM,wayland
+env = SDL_VIDEODRIVER,wayland
+env = CLUTTER_BACKEND,wayland
+
+# ==================================================
+# GENERAL
+# ==================================================
+
+general {
+    gaps_in = 6
+    gaps_out = 12
+
+    border_size = 2
+
+    col.active_border = rgba(ffffffff)
+    col.inactive_border = rgba(444444aa)
+
+    resize_on_border = true
+
+    layout = dwindle
+}
+
+# ==================================================
+# DECORATION
+# ==================================================
+
+decoration {
+    rounding = 14
+
+    active_opacity = 1.0
+    inactive_opacity = 0.95
+
+    blur {
+        enabled = true
+        size = 8
+        passes = 3
+    }
+}
+
+# ==================================================
+# ANIMATIONS
+# ==================================================
+
+animations {
+    enabled = yes
+}
+
+# ==================================================
+# DWINDLE
+# ==================================================
+
+dwindle {
+    preserve_split = true
+}
+
+# ==================================================
+# INPUT
+# ==================================================
+
+input {
+    kb_layout = latam
+
+    follow_mouse = 1
+
+    sensitivity = 0
+
+    touchpad {
+        natural_scroll = false
+    }
+}
+
+# ==================================================
+# MISC
+# ==================================================
+
+misc {
+    disable_hyprland_logo = true
+    force_default_wallpaper = 0
+}
+
+# ==================================================
+# KEYBINDS
+# ==================================================
+
+bind = SUPER, RETURN, exec, $terminal
+bind = SUPER, D, exec, $menu
+bind = SUPER, E, exec, $fileManager
+
+bind = SUPER, Q, killactive
+bind = SUPER, F, fullscreen
+bind = SUPER, V, togglefloating
+
+bind = SUPER, L, exec, hyprlock
+bind = SUPER, N, exec, swaync-client -t
+
+# ==================================================
+# MOVE FOCUS
+# ==================================================
+
+bind = SUPER, left, movefocus, l
+bind = SUPER, right, movefocus, r
+bind = SUPER, up, movefocus, u
+bind = SUPER, down, movefocus, d
+
+# ==================================================
+# MOVE WINDOWS
+# ==================================================
+
+bind = SUPER SHIFT, left, movewindow, l
+bind = SUPER SHIFT, right, movewindow, r
+bind = SUPER SHIFT, up, movewindow, u
+bind = SUPER SHIFT, down, movewindow, d
+
+# ==================================================
+# WORKSPACES
+# ==================================================
+
+bind = SUPER, 1, workspace, 1
+bind = SUPER, 2, workspace, 2
+bind = SUPER, 3, workspace, 3
+bind = SUPER, 4, workspace, 4
+bind = SUPER, 5, workspace, 5
+
+bind = SUPER SHIFT, 1, movetoworkspace, 1
+bind = SUPER SHIFT, 2, movetoworkspace, 2
+bind = SUPER SHIFT, 3, movetoworkspace, 3
+bind = SUPER SHIFT, 4, movetoworkspace, 4
+bind = SUPER SHIFT, 5, movetoworkspace, 5
+
+# ==================================================
+# SCREENSHOTS
+# ==================================================
+
+bind = SUPER, S, exec, grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%s).png
+
+# ==================================================
+# AUDIO
+# ==================================================
+
+bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
