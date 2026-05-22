@@ -1,0 +1,32 @@
+.control-center {
+  background: rgba(30, 30, 46, 0.75);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notification {
+  background: rgba(49, 50, 68, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  margin: 6px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+} 
+* {
+  font-family: JetBrainsMono Nerd Font;
+  color: #cdd6f4;
+}
+
+.control-center {
+  background: rgba(24, 24, 37, 0.85);
+}
+
+.widget-title {
+  color: #f5c2e7;
+  font-weight: bold;
+}
+
+.widget-dnd {
+  color: #f9e2af;
+}
