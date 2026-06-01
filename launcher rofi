@@ -20,16 +20,16 @@ configuration {
 }
 
 * {
-    bg-col: #11111bee;
-    bg-col-light: #1a1b26ee;
+    bg-col: #11111bcc;
+    bg-col-light: #1f2335dd;
 
-    border-col: #ffffff;
+    border-col: #ffffff22;
 
-    selected-col: #2a2b3cee;
+    selected-col: #2f3549dd;
 
     fg-col: #ffffff;
 
-    fg-col2: #d9d9d9;
+    fg-col2: #89b4fa;
 
     width: 600;
 
@@ -45,7 +45,7 @@ window {
     fullscreen: false;
 
     width: 32%;
-    height: 48%;
+    height: 52%;
 
     border-radius: 20px;
 
@@ -60,6 +60,8 @@ mainbox {
 
     spacing: 14px;
 
+    padding: 14px;
+
     background-color: transparent;
 
     children: [ "inputbar", "listview" ];
@@ -68,11 +70,13 @@ mainbox {
 inputbar {
     enabled: true;
 
-    spacing: 10px;
+    spacing: 12px;
 
-    padding: 14px;
+    padding: 16px;
 
-    border-radius: 16px;
+    border: 2px;
+    border-radius: 18px;
+    border-color: @border-col;
 
     background-color: @bg-col-light;
 
@@ -86,22 +90,26 @@ textbox-prompt-colon {
 
     expand: false;
 
-    str: "";
+    str: " ";
 
-    text-color: @fg-col2;
+    text-color: #89b4fa;
+
+    font: "JetBrainsMono Nerd Font 16";
 }
 
 entry {
     enabled: true;
 
+    expand: true;
+
     background-color: transparent;
 
-    text-color: inherit;
+    text-color: #ffffff;
 
     cursor: text;
 
-    placeholder: "Launch something...";
-    placeholder-color: #aaaaaa;
+    placeholder: "Buscar aplicaciones...";
+    placeholder-color: #ffffff66;
 }
 
 listview {
